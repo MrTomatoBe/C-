@@ -1,0 +1,42 @@
+#include <iostream>
+  using namespace std;
+  int main() {
+  cout << "\033[32mAre you a boy or a girl?\033[0m \nAnswer here: ";
+    string gender;
+    getline(cin, gender);
+
+    if (gender == "boy") {
+      cout << "Yay you can be gay\n or a Father\n or Grandfather\n" << endl;
+    }
+    else if (gender == "girl") {
+      cout << "Yay you can be a lesbian\n or a Mother\n or a Grandmother\n" << endl;
+    }
+    else {cout << "Huh?\n" << endl;
+         }
+
+  cout << "are you an introvert or an extrovert?\nAnswer here pls: ";
+    string typeP;
+    getline(cin, typeP);
+    if (typeP == "introvert") {
+      cout << "Yay you can be a loser\n or a writer\n or a programmer\n" << endl;
+      ;
+    }
+    else if (typeP == "extrovert") {
+      cout << "yay you can be a influencer\n or a salesman or saleslady\n or a teacher yk\n" << endl;
+      ;
+    }
+    else {cout << "HUH?\n" << endl;
+         }
+  cout << "      \033[34mokay last question	\033[0m\n \n \ndo you know what you want in the future?\n";
+    string future;
+    getline(cin, future);
+    if (future == "yes") {
+      cout << "Congrats" << endl;
+    }
+    else if (future == "no") {
+      cout << "okay then" << endl;
+    }
+    else {cout << "?" << endl;  }
+
+
+  return 0;}
