@@ -1,0 +1,60 @@
+// ATM machine
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+  const int pin1 = 1234;
+  int tries = 3;
+  int balance = 10000;
+
+  cout << "Welcome to the ATM machine\ninput your pin here: ";
+  int pin;
+  cin >> pin;
+
+  while (true) { 
+    if (pin == pin1) {
+    cout << "Correct pin" << endl;
+      break;
+  }
+  else if (pin != pin1) {
+    tries -= 1;
+    cout << "Wrong try again you have: " << tries << "\nTry to remember: " << endl;
+    cin >> pin;
+    if (tries == 0) { 
+      cout << "You have been locked out of the account" << endl;
+    break;}
+  }
+  }
+
+  while (true) {
+    if (tries > 0) {
+      cout << "Type the number of the process\nWould you like to:\n1.deposit\n2.withdraw\n3.check balance\n4.exit\n";
+      int choice;
+      cin >> choice;
+       switch (choice) {
+        case 1: {
+            cout << "How much would you like to deposit?\n";
+            int deposit;
+            cin >> deposit;
+            cout << "You have deposited: " << deposit << endl;
+          break;
+          }
+         case 2: { 
+            cout << "How much would you like to withdraw?\n";
+            int withdraw;
+            cin >> withdraw;
+           if (withdraw > balance) {
+             cout << "You do not have enough money to deposit" << endl;
+           break;}
+           cout << "You have withdrawn: " << withdraw << endl;
+          }
+         case 3: {
+           cout << "Your balance is: " << balance << endl;
+         }
+         case 4: {
+           cout << "Thank you for using the ATM machine" << endl;
+         break;}
+        }
+      break;}
+    }
+return 0;}
