@@ -1,0 +1,48 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+struct student {
+  string name;
+  int grades;
+};
+int main() {
+ 
+  vector<student> students;
+  int Subject1;
+  int Subject2;
+  int Subject3;
+  string view;
+
+  while (true) {
+    student folder;
+    cout << "Enter student name: ";
+    getline(cin, folder.name);    
+  cout << "GRADE 1: ";
+  cin >> Subject1;
+  cout << "GRADE 2: ";
+  cin >> Subject2;
+  cout << "GRADE 3: ";
+  cin >> Subject3;
+  folder.grades = (Subject1 + Subject2 + Subject3) / 3;
+  students.push_back(folder);
+    cin.ignore();
+  cout << "Click any key to continue and type view to see the students name and average\n";
+    getline(cin, view);
+    if (view == "view") {
+      break;
+    }
+    
+  }
+  cout << "______________________________________\n";
+   cout << "Students Records: " << endl;
+  for ( const student& folder : students) {
+  cout << "Name: " << folder.name << endl;
+  cout << "Average Grade: " << folder.grades << endl;
+  string remarks = (folder.grades >= 75) ? "Passed" : "Failed";
+  cout << "Remarks: " << remarks << endl;
+  cout << "-------------------------------------" << endl;
+}
+  return 0;
+
+}
