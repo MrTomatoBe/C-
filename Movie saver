@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+struct movies {
+ string name;
+ string director;
+};
+int main() {
+  vector<movies> movieshelves;
+  string name;
+  string director;
+  string YN;
+  cout << "\033[32mDo you want to save a movie?:\033[0m " << endl;
+  getline(cin, YN);
+  if (YN != "yes") {
+    cout << "okay";
+    return 0;
+  }
+ 
+  cout << "Just type exit to view your movies \n";
+  while (true) {
+    cout << "\033[34mSave your favorite movies here:\033[0m ";
+    getline(cin, name);
+    cout << "\033[36mThe author is?: \033[0m";
+    if (name == "exit") {
+      break;
+    }
+    getline(cin, director);
+    if (director == "exit") {
+      break;
+    }
+   
+    movieshelves.push_back({name, director});
+    cout << "Do you want to continue?: ";
+    getline(cin, YN);
+    if (YN != "yes") {
+      break;
+    }
+  }
+  for (const auto& movie : movieshelves) {
+    cout << "\033[35mMovie: \033[0m" << movie.name << ",\n\033[35mDirector is:\033[0m " << movie.director << endl;
+  }
+return 0;
+}
