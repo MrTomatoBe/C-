@@ -1,0 +1,42 @@
+#include <iostream>
+#include <iomanip>
+#include <vector>
+using namespace std;
+struct needs {
+  string name;
+  double amount;
+};
+int main() {
+  vector<needs> shelves;
+  cout << "-- List of Expenses --\n";
+  while (true) {
+    cout << "Enter the name of the expense: ";
+    string name;
+    getline(cin, name);
+    cout << "The amount?: ";
+    double amount;
+    cin >> amount;
+    cin.ignore(1000, '\n');
+    shelves.push_back({name, amount});
+
+    
+    cout << "enter Y to continue and N to stop: ";
+    string choice;
+    getline(cin, choice);
+    if (choice == "Y" || choice == "y") {
+      continue;
+    } 
+   if (choice == "N" || choice == "n") {
+    break;
+   }
+  
+  }
+  cout << "-- List of Expenses --\n";
+  cout << setw(10) << "Name" << setw(10) << "Amount" << endl;
+  cout << fixed << setprecision(2);
+  for (int i = 0; i < shelves.size(); i++) {
+    cout << setw(10) << shelves[i].name <<setw(10) << shelves[i].amount << endl;
+  }
+    
+return 0;
+  }
