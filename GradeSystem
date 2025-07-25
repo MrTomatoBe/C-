@@ -1,0 +1,59 @@
+#include <iostream>
+#include <vector>
+#include <iomanip>
+using namespace std;
+struct FOLDER {
+string subject;
+double grades;
+string letter;
+};
+int main() {
+  vector<FOLDER> folders;
+  cout << "STUDENTS GRADES" << endl;
+  cout << "===============" << endl;
+  while(true) {
+    string subject;
+      cout << "Enter the subject: ";
+      getline(cin, subject);
+     cout << "Enter the grades: ";
+     double grades;
+     cin >> grades;
+     cin.ignore(1000, '\n');
+    string letter;
+    if (grades < 60) {
+      letter = "F";
+    }
+    else if (grades < 70) {
+      letter = "D";
+    }
+    else if (grades < 80) {
+      letter = "C";
+    }
+    else if (grades < 90) {
+      letter = "B";
+    }
+    else if (grades < 100) {
+      letter = "A";
+    }
+    else {
+      cout << "Invalid grade" << endl;
+    }
+     folders.push_back({subject, grades, letter});
+
+     cout << "continues? (y/n): ";
+     char answer;
+     cin >> answer;
+     cin.ignore(1000, '\n');
+    if (answer == 'n') {
+    break;
+  }
+  }
+  int i;
+  cout << setw(11) << "Subjects" << setw(11) << "Grades" << setw(11) << "Letter" << endl;
+  cout << setw(11) << "========" << setw(11) << "======" << setw(11) << "======" << endl;
+for (i = 0; i < folders.size(); i++) {
+  cout << setw(10) << folders[i].subject << setw(10) << folders[i].grades << setw(10) << folders[i].letter << endl;
+  
+}
+  
+}
