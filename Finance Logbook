@@ -1,0 +1,70 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <iomanip>
+using namespace std;
+struct money1 {
+  string name;
+  int income;
+};
+struct money2 {
+string name;
+int expenses;
+};
+int main() {
+  vector<money1> money1;
+  vector<money2> money2;
+  int choice;
+  int i;
+  int Total_expenses = 0;
+  int Total_income = 0;
+  while (true) {
+  cout << "\033[34mEnter 1. if youre going to add expenses\nEnter 2. if youre going to add income\nif you want to view after press 3\nEnter:\033[0m ";
+  cin >> choice;
+    if (choice == 1) {
+      cout << "enter the name of expense: ";
+      string name;
+      cin >> name;
+      cout << "enter the amount of expense: ";
+      int expenses;
+      cin >> expenses;
+      money2.push_back({name, expenses});
+      continue;
+    }
+      else if (choice == 2) {
+          cout << "enter where the income come from: ";
+        string name;
+        cin >> name;
+        cout << "enter the amount of income: ";
+        int income;
+        cin >> income;
+        money1.push_back({name, income});
+        continue;
+  }
+    else if (choice == 3) {
+      Total_income = 0;
+      Total_expenses = 0;
+      for (i = 0; i < money1.size(); i++) {
+        Total_income += money1[i].income;
+      }
+      for (i = 0; i < money2.size(); i++) {
+        Total_expenses += money2[i].expenses;
+      }
+      cout << "---------------------------------------------------------------------------------\n";
+      cout << "\033[34mIncome from and how much:\033[0m " << endl;
+      for (i = 0; i < money1.size(); i++) {
+        cout << setw(10) << money1[i].name << " = " << money1[i].income << endl;  
+      }
+      cout <<"\033[33mExpenses and how much:\033[0m\n ";
+      for (i = 0; i <money2.size(); i++) {
+      cout << setw(10) << money2[i].name << " = " << money2[i].expenses << endl;
+      }
+      cout << "Total income: " << Total_income << endl;
+      cout << "Total expenses: " << Total_expenses << endl;
+      cout << "---------------------------------------------------------------------------------\n";}
+    else {
+      cout << "invalid input\n";
+    }
+
+  }
+}
