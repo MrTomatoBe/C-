@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+#include <iomanip>
+using namespace std;
+struct inventory {
+  string name;
+  int quantity;
+  double price;
+  double total_price;
+};
+int main() {
+  vector<inventory> bag;
+  while(true) {
+    cout << "Please enter the name, quantity, and the price of the item: \n";
+    cout << "enter the name: ";
+    string name;
+    cin >> name;
+    cout << "enter the quantity: ";
+    int quantity;
+    cin >> quantity;
+    cout << "enter the price: ";
+    double price;
+    cin >> price;
+    double sumprice = 0;
+    sumprice = price * quantity;
+    bag.push_back({name, quantity, price, sumprice});
+    int i;
+        cout << "enter 'C' to continue and Q to view the inventory:";
+         string option;
+          cin >> option;
+          if (option == "C" || option == "c") {
+          continue;
+           }
+          else if (option == "Q" || option == "q") {
+            cout << "_______________________________\n";
+            cout << setw(10) << "Inventory\n";
+            cout << "_______________________________\n";
+            cout << setw(10) << "Item:" << setw(10) << "Quantity:" << setw(10) << "Price:" << setw(10) << "Total: " << endl;
+             for (i = 0; i < bag.size(); i++) {
+               cout << setw(10) << bag[i].name << setw(10) << bag[i].quantity << setw(10) << bag[i].price << setw(10) << bag[i].total_price << endl;
+             }
+            continue;
+  } 
+};
+}
