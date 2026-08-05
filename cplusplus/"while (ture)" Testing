@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main() {
+  while (true) {
+    cout << "Print 1\n";
+    int no1;
+    cin >> no1;
+
+    if (no1 == 1) {
+      cout << "well done" << endl;
+    break;
+    } 
+    else if (no1 == 18) {
+      cout << "not your age" << endl;
+      continue;
+      
+    }
+    else {
+      cout << "Print 1" << endl;
+      int no1;
+      cin >> no1;
+      continue;
+    }
+    return 0;
+    }
+    
+    
+
+    
+  }
