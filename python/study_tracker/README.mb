@@ -1,0 +1,28 @@
+# Command-Line Study Tracker
+
+A beginner Python project that records study time and the subjects studied.
+
+## Current features
+
+- Converts minutes into hours and remaining minutes
+- Displays a menu of subjects
+- Allows the user to select multiple subjects
+- Displays a summary of the study session
+
+## Concepts practiced
+
+- Variables and functions
+- Conditionals
+- While loops
+- Lists and dictionaries
+- User input
+- Return values
+- String formatting
+
+## Current limitation
+
+Entering text when a number is expected causes an error.
+
+## Next step
+
+Add exception handling for invalid inputs.
